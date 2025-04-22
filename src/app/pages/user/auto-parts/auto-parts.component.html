@@ -1,23 +1,22 @@
 <app-navbar></app-navbar>
 
 <!-- Sidebar -->
-<div id="default-sidebar" class=" fixed top-14 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidenav">
+<div id="default-sidebar" class="    fixed top-14 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidenav">
   <div class="overflow-y-auto pt-10 py-5 px-3 h-full bg-white border-r border-gray-200 dark:bg-gray-800 dark:border-gray-700">
     <ul class="space-y-2">
       <li>
-        <a  routerLink="/createAd"
-         class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+        <a href="#" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
           <svg class="ml-1.5 w-5 h-5 text-gray-400 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 18 18">
             <path d="M17 0h-5.768a1 1 0 1 0 0 2h3.354L8.4 8.182A1.003 1.003 0 1 0 9.818 9.6L16 3.414v3.354a1 1 0 0 0 2 0V1a1 1 0 0 0-1-1Z" />
             <path d="m14.258 7.985-3.025 3.025A3 3 0 1 1 6.99 6.768l3.026-3.026A3.01 3.01 0 0 1 8.411 2H2.167A2.169 2.169 0 0 0 0 4.167v11.666A2.169 2.169 0 0 0 2.167 18h11.666A2.169 2.169 0 0 0 16 15.833V9.589a3.011 3.011 0 0 1-1.742-1.604Z" />
           </svg>
-          <span  class="ml-3">Create New</span>
+          <span class="ml-3">Create New</span>
         </a>
       </li>
 
       <li>
 
-      <a  (click)="toggleModel()"  class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+      <a href="#" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                
         <svg class="ml-1 w-5 h-5 text-gray-400 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 14">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13V1m0 0L1 5m4-4 4 4"/>
@@ -28,7 +27,7 @@
       </li>
 
       <li>
-        <a (click)="toggleHowToUseModal()" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+        <a href="#" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
           <svg class="ml-1 w-5 h-5 text-gray-400 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 22 21">
             <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M7.24 7.194a24.16 24.16 0 0 1 3.72-3.062m0 0c3.443-2.277 6.732-2.969 8.24-1.46 2.054 2.053.03 7.407-4.522 11.959-4.552 4.551-9.906 6.576-11.96 4.522C1.223 17.658 1.89 14.412 4.121 11m6.838-6.868c-3.443-2.277-6.732-2.969-8.24-1.46-2.054 2.053-.03 7.407 4.522 11.959m3.718-10.499a24.16 24.16 0 0 1 3.719 3.062M17.798 11c2.23 3.412 2.898 6.658 1.402 8.153-1.502 1.503-4.771.822-8.2-1.433m1-6.808a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"/>
         </svg>
@@ -36,15 +35,13 @@
         </a>
     </li>
     <li>
-      <a (click)="toggleLogoutModal()" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+      <a href="#" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
         <svg class="ml-1.5 w-5 h-5 text-gray-400 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16">
           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h11m0 0-4-4m4 4-4 4m-5 3H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h3"/>
       </svg>
           <span class="ml-3">Log Out</span>
       </a>
   </li>
-
-
 
 
 
@@ -128,52 +125,6 @@
 <!-- Main Content -->
 <div class="flex-1  p-6 ml-0 sm:ml-64 bg-gray-50 dark:bg-gray-900">
  
-
-
-
-  <div id="logoutModal"
-     class="fixed inset-0 z-50 hidden items-center justify-center bg-transparent bg-opacity-40 backdrop-blur-sm backdrop-brightness-75">
-
-    <div class="bg-gray-900 border border-gray-700 text-white rounded-xl p-6 w-full max-w-md mx-auto relative shadow-xl">
-      
-
-      <button (click)="toggleLogoutModal()" class="absolute top-3 right-3 text-gray-400 hover:text-white text-lg">✖</button>
-      
-    
-      <div class="text-center">
-        <div class="text-4xl mb-2 text-red-500">⚠️</div>
-        <h2 class="text-2xl font-bold text-red-400 mb-2">Confirm Logout</h2>
-        <p class="text-gray-400 mb-6">Are you sure you want to logout from your account?</p>
-      </div>
-  
-    
-      <div class="flex justify-center gap-4">
-        <button (click)="toggleLogoutModal()" class="px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg text-white">
-          Cancel
-        </button>
-        <button (click)="confirmLogout()" class="px-4 py-2 bg-red-600 hover:bg-red-700 rounded-lg text-white">
-          Yes, Logout
-        </button>
-      </div>
-    </div>
-  </div>
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   <!-- Mobile menu button -->
   <button id="menuButton" class="md:hidden text-gray-800">
       <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -182,21 +133,20 @@
   </button>
  
   <!-- Page Content -->
-  <h2 class="mt-13 p-5 text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">Vehical Section</h2>
+  <h2 class="mt-13 p-5 text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">Auto Parts Section</h2>
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-    <!-- Example Product Cardss -->
+    
     
 
-      <div 
-      (click)="openAdDetails(ad)" *ngFor="let ad of advertisements"
+      <div
+        *ngFor="let ad of advertisements"
         class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700"
       >
-        <a   (click)="openAdDetails(ad)">
+        <a href="#">
           <img
-            
             class="p-3 rounded-2xl w-full h-58 object-cover"
-            [src]="ad.images[0]"
-           
+            [src]="ad.imageUrl"
+            alt="product image"
           />
         </a>
         <div class="px-5 pb-5">
@@ -206,23 +156,18 @@
             </h5>
           </a>
           <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">
-            create at {{ ad.createdAt }}
+            {{ ad.description }}
           </p>
-          <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">
-          {{ ad.createdAt | date:'shortTime' }}
-          </p>
-          <span class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm dark:bg-green-900 dark:text-green-300">Verified Seller</span>
-
           <div class="flex items-center justify-between mt-4">
-            <span class="text-xl font-bold text-gray-900 dark:text-white">
+            <span class="text-3xl font-bold text-gray-900 dark:text-white">
               ${{ ad.price }}
             </span>
-           <div>
-
-            <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">
-               {{  ad.location }}
-            </p>
-           </div>
+            <button
+              (click)="openAdDetails(ad)"
+              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              View more
+            </button>
           </div>
         </div>
       </div>
@@ -235,20 +180,20 @@
   <div
     class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 w-full max-w-4xl h-[700px] overflow-y-auto relative"
   >
-    <!-- Close Button -->
+  
     <button
       (click)="closeModal()"
-      class="absolute m-2 top-2 right-2 text-white bg-red-600 hover:bg-red-700 px-3 py-1 rounded"
+      class="absolute top-2 right-2 text-white bg-red-600 hover:bg-red-700 px-3 py-1 rounded"
     >
       Close
     </button>
 
-    <!-- Title -->
+   
     <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4">
-        {{ selectedAd.title }}
+      {{ selectedAd.title }}
     </h2>
 
-    <!-- Carousel Wrapper -->
+ 
     <div class="relative h-56 md:h-96 overflow-hidden rounded-lg mb-5">
       <div class="w-full h-full">
         <img
@@ -259,7 +204,7 @@
         />
       </div>
 
-      <!-- Controls -->
+
       <button
         type="button"
         class="absolute top-0 left-0 z-10 h-full px-4 flex items-center"
@@ -276,7 +221,6 @@
       </button>
     </div>
 
-    <!-- Slide Indicators (optional dots) -->
     <div class="flex justify-center gap-2 mb-4">
       <ng-container *ngFor="let image of selectedAd.images; index as i">
         <button
@@ -290,27 +234,11 @@
       </ng-container>
     </div>
 
-    <!-- Description -->
-    <p class="text-gray-700 dark:text-gray-300 mb-2">Brand : {{ selectedAd.brand }}</p>
-    <p class="text-gray-700 dark:text-gray-300 mb-2">Model : {{ selectedAd.model }}</p>
-    <p class="text-gray-700 dark:text-gray-300 mb-2">Location : {{ selectedAd.location }}</p>
-    <p class="text-gray-700 dark:text-gray-300 mb-2">Year :  {{ selectedAd.year }}</p>
-    <p class="text-gray-700 dark:text-gray-300 mb-2">Fual Type :  {{ selectedAd.fualType }}</p>
-    <p class="text-gray-700 dark:text-gray-300 mb-2">Trancsmission : {{ selectedAd.transmission }}</p>
-    <p class="text-gray-700 dark:text-gray-300 mb-2">Engine Capacity :  {{ selectedAd.EngineCapacity }}</p>
-    <p class="text-gray-700 dark:text-gray-300 mb-2">Condition :  {{ selectedAd.condition }}</p>
-    <p class="text-gray-700 dark:text-gray-300 mb-2">Millage :  {{ selectedAd.mileage }}</p>
-    <p class="text-gray-700 dark:text-gray-300 mb-2">Contact Number :  {{ selectedAd.contact }}</p>
+   
+    <p class="text-gray-700 dark:text-gray-300 mb-2">{{ selectedAd.description }}</p>
+    <p class="text-gray-700 dark:text-gray-300 mb-2">{{ selectedAd.more }}</p>
+
     
-    
-    <br><label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your message</label>
-<textarea id="message" rows="4" disabled class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here...">
-  {{ selectedAd.description }}
-</textarea><br>
-
-
-
-    <!-- Price -->
     <p class="text-lg font-semibold text-gray-900 dark:text-white">
       Price: ${{ selectedAd.price }}
     </p>
@@ -319,128 +247,6 @@
    
   </div>
 </div>
-
-
-
-
-
-
-<!-- Modal -->
-
-  <div id="howToUseModal"
-     class="fixed inset-0 z-50 hidden items-center justify-center bg-transparent bg-opacity-40 backdrop-blur-sm backdrop-brightness-75">
-  <div class="relative w-full max-w-3xl mx-auto bg-gray-900 text-white rounded-2xl shadow-lg p-6 overflow-y-auto max-h-[90vh] border border-gray-700">
-    
-
-    <button (click)="toggleHowToUseModal()" class="absolute top-3 right-3 text-gray-400 hover:text-white text-xl">
-      ✖
-    </button>
-
-  
-    <h2 class="text-2xl font-bold text-blue-400 text-center mb-6">🚗 How to Use Our App</h2>
-
-  
-    <div class="space-y-6">
-      
-      <div class="bg-gray-800 p-4 rounded-xl border border-gray-700">
-        <h3 class="text-xl font-semibold text-blue-300">1. Create an Account</h3>
-        <p class="text-gray-400 mt-2">Sign up using your email and start exploring car listings tailored just for you.</p>
-      </div>
-
-      <div class="bg-gray-800 p-4 rounded-xl border border-gray-700">
-        <h3 class="text-xl font-semibold text-blue-300">2. Search for Cars</h3>
-        <p class="text-gray-400 mt-2">Use filters to find cars by brand, model, price, location, fuel type, and more.</p>
-      </div>
-
-      
-      <div class="bg-gray-800 p-4 rounded-xl border border-gray-700">
-        <h3 class="text-xl font-semibold text-blue-300">3. Post Your Own Ads</h3>
-        <p class="text-gray-400 mt-2">Selling your car? Post an ad by filling out the form and uploading pictures.</p>
-      </div>
-
-      <div class="bg-gray-800 p-4 rounded-xl border border-gray-700">
-        <h3 class="text-xl font-semibold text-blue-300">4. Chat with AutoBot</h3>
-        <p class="text-gray-400 mt-2">Need help? AutoBot is available 24/7 to answer questions and guide you.</p>
-      </div>
-    </div>
-
-    <div class="mt-8 text-center">
-      <button onclick="toggleHowToUseModal()" class="bg-blue-700 hover:bg-blue-800 text-white px-6 py-2 rounded-lg">
-        Got It!
-      </button>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- Top Up Modal -->
-<div id="topUpModal"
-     class="fixed inset-0 z-50 hidden items-center justify-center bg-transparent bg-opacity-40 backdrop-blur-sm backdrop-brightness-75">
-  <div class="relative w-full max-w-lg p-6 bg-gray-900 rounded-2xl shadow-lg border border-gray-700">
-
-    <button (click)="toggleModel()" class="absolute top-2 right-2 text-gray-400 hover:text-white text-lg">
-      ✖
-    </button>
-
-
-    <h2 class="text-2xl font-bold text-blue-400 text-center mb-4">🚀 Boost Your Ad</h2>
-
-   
-    <form>
-
-      <div class="space-y-3 mb-6">
-        <label class="flex items-center justify-between bg-gray-800 p-4 rounded-lg">
-          <span class="text-white">⭐ 1-Day Top</span>
-          <input type="radio" name="plan" class="form-radio text-blue-500" />
-        </label>
-        <label class="flex items-center justify-between bg-gray-800 p-4 rounded-lg">
-          <span class="text-white">🌟 3-Day Highlight</span>
-          <input type="radio" name="plan" class="form-radio text-blue-500" />
-        </label>
-        <label class="flex items-center justify-between bg-gray-800 p-4 rounded-lg">
-          <span class="text-white">🚀 7-Day Premium Boost</span>
-          <input type="radio" name="plan" class="form-radio text-blue-500" />
-        </label>
-      </div>
-
-
-      <div class="mb-6">
-        <label class="block text-sm text-gray-300 mb-2">Payment Method</label>
-        <select class="w-full bg-gray-800 text-white border border-gray-600 rounded-lg p-3">
-          <option>Credit/Debit Card</option>
-          <option>Mobile Wallet</option>
-          <option>Bank Transfer</option>
-        </select>
-      </div>
-
-  
-      <div class="flex justify-end gap-3">
-        <button type="button" (click)="toggleModel()" class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg">
-          Cancel
-        </button>
-        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg">
-          Confirm Top Up
-        </button>
-      </div>
-    </form>
-  </div>
-</div>
-
-
-
-
-
-
 
   </div>
 </div>
@@ -480,7 +286,4 @@
 
 
 
-<app-footer ></app-footer>
-
-
-
+<app-footer></app-footer>

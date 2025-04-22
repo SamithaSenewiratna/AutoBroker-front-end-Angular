@@ -1,0 +1,94 @@
+
+<app-navbar></app-navbar>
+
+
+<section class="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900 p-6">
+
+  
+  <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 w-full max-w-xl text-center mt-15">
+    
+
+
+  
+    <div class="flex justify-center mb-6">
+      <div class="flex items-center ">
+        <img
+          [src]="profile.photo"
+          alt="Main Image Preview"
+          class="w-32 h-32 mx-auto rounded-full border-4 border-blue-600 shadow-md mb-4 object-cover"
+          (click)="triggerMainImageInput()"
+          />
+    
+        <input
+          type="file"
+          id="mainImageInput"
+          class="hidden"
+          (change)="onFileSelected($event)" />
+      </div>
+  
+    </div>
+
+
+   
+    <div *ngIf="!editMode">
+      <h2 class="text-2xl font-semibold text-gray-800 dark:text-gray-200">{{ profile.name }}</h2>
+      <p class="text-gray-500 dark:text-gray-400">{{ profile.email }}</p>
+    </div>
+
+
+ <div class="flex justify-center gap-6 mt-6">
+  <div>
+    <p class="text-xl font-semibold text-gray-800 dark:text-white">12</p>
+    <p class="text-gray-500 dark:text-gray-400 text-sm">Vehicle Ads</p>
+  </div>
+  <div>
+    <p class="text-xl font-semibold text-gray-800 dark:text-white">5</p>
+    <p class="text-gray-500 dark:text-gray-400 text-sm">Spare Parts Ads</p>
+  </div>
+  <div>
+    <p class="text-xl font-semibold text-gray-800 dark:text-white">Free</p>
+    <p class="text-gray-500 dark:text-gray-400 text-sm">Membership</p>
+  </div>
+</div>
+
+
+<div class="mt-6 ">
+<h3 class="text-gray-500 dark:text-gray-400">Phone Number : {{profile.phone}}</h3>
+<h3 class="text-gray-500 dark:text-gray-400">Location : {{profile.location}}</h3>
+</div>
+   
+   
+
+ 
+    <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+     
+    
+    </div>
+
+    <form *ngIf="editMode" (ngSubmit)="saveChanges()" class="space-y-4">
+      <input type="text" [(ngModel)]="profile.name" name="name" placeholder="Name" class="w-full p-2 rounded border border-gray-300 dark:border-gray-600 dark:bg-gray-700 text-gray-800 dark:text-white">
+      <input type="email" [(ngModel)]="profile.email" name="email" placeholder="Email" class="w-full p-2 rounded border border-gray-300 dark:border-gray-600 dark:bg-gray-700 text-gray-800 dark:text-white">
+      <input type="password" [(ngModel)]="profile.password" name="password" placeholder="password" class="w-full p-2 rounded border border-gray-300 dark:border-gray-600 dark:bg-gray-700 text-gray-800 dark:text-white">
+      <input type="phoneNumber" [(ngModel)]="profile.phone" name="phoneNumber" placeholder="phoneNumber" class="w-full p-2 rounded border border-gray-300 dark:border-gray-600 dark:bg-gray-700 text-gray-800 dark:text-white">
+      <input type="location" [(ngModel)]="profile.location" name="location" placeholder="location" class="w-full p-2 rounded border border-gray-300 dark:border-gray-600 dark:bg-gray-700 text-gray-800 dark:text-white">            
+    </form>
+
+
+    <div class="mt-6">
+      <button *ngIf="!editMode" (click)="editMode = true" class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-full">
+        Edit Profile
+      </button>
+
+  
+
+      <div *ngIf="editMode" class="space-x-4">
+        <button type="submit" (click)="saveChanges()" class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-full">
+          Save
+        </button>
+        <button (click)="cancelEdit()" class="bg-gray-500 hover:bg-gray-600 text-white py-2 px-4 rounded-full">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

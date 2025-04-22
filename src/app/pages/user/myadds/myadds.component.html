@@ -1,1 +1,122 @@
-<p>myadds works!</p>
+<app-navbar></app-navbar>
+
+<div class="min-h-screen flex flex-col-reverse justify-center bg-gray-100 dark:bg-gray-900">
+  <div class="mx-10 lg:mx-30 relative overflow-x-auto shadow-md sm:rounded-lg">
+    <table class="mt-0 w-full rounded text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <tr>
+          <th class="px-4 py-3">Image</th>
+          <th class="px-4 py-3">Product Name</th>
+          <th class="px-4 py-3">Category</th>
+          <th class="px-4 py-3">Brand</th>
+          <th class="px-4 py-3">Condition</th>
+          <th class="px-4 py-3">City</th>
+          <th class="px-4 py-3">Price</th>
+          <th class="px-4 py-3">Fuel Type</th>
+          <th class="px-4 py-3">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of advertisements" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+          <td class="px-4 py-3">
+            <img [src]="product.images[0]" alt="Product Image" class="w-20 h-20 rounded object-cover" />
+          </td>
+          <td class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ product.title }}</td>
+          <td class="px-4 py-3">{{ product.EngineCapacity }}</td>
+          <td class="px-4 py-3">{{ product.brand }}</td>
+          <td class="px-4 py-3">{{ product.condition }}</td>
+          <td class="px-4 py-3">{{ product.location }}</td>
+          <td class="px-4 py-3">{{ product.price }}</td>
+          <td class="px-4 py-3">{{ product.brand }}</td>
+          <td class="px-4 py-3 space-x-2">
+            <button (click)="openEditModal(product)" class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-1.5 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">
+              Edit
+            </button>
+            <button class="text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-4 py-1.5 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900">
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+<div *ngIf="showEditModal" class="fixed inset-0 flex items-center justify-center dark:bg-gray-900 bg-opacity-50 z-50">
+    <div class="bg-white dark:bg-gray-800 rounded-2xl w-full max-w-4xl p-6 relative shadow-lg overflow-y-auto max-h-[90vh]">
+      
+   
+      <button class="absolute top-3 right-3 text-gray-600 hover:text-red-600 dark:text-gray-300" (click)="closeModal()">
+        close ✕
+      </button>
+  
+ 
+      <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Edit Advertisement</h2>
+  
+ 
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-4">
+        <div *ngFor="let img of selectedProduct.images; let i = index">
+          <img [src]="img" alt="Preview"
+               class="h-32 w-full object-cover rounded-lg mb-2 cursor-pointer"
+               (click)="triggerFileInput(i)" />
+      
+          <input type="file"
+                 [id]="'mainImageInput' + i"
+                 class="hidden"
+                 (change)="onSingleFileChange($event, i)" />
+        </div>
+      </div>
+  
+      <!-- Form -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <ng-container *ngFor="let field of [
+          { key: 'title', label: 'Title' },
+          { key: 'brand', label: 'Brand' },
+          { key: 'model', label: 'Model' },
+          { key: 'location', label: 'Location' },
+          { key: 'price', label: 'Price' },
+          { key: 'year', label: 'Year' },
+          { key: 'fualType', label: 'Fuel Type' },
+          { key: 'transmission', label: 'Transmission' },
+          { key: 'EngineCapacity', label: 'Engine Capacity' },
+          { key: 'condition', label: 'Condition' },
+          { key: 'mileage', label: 'Mileage' },
+          { key: 'contact', label: 'Contact' }
+        ]">
+          <div>
+            <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-200">{{ field.label }}</label>
+            <input type="text"
+                   [(ngModel)]="selectedProduct[field.key]"
+                   [placeholder]="field.label"
+                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 
+                          block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 
+                          dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+          </div>
+        </ng-container>
+      </div>
+  
+ 
+      <div class="mt-4">
+        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-200">Description</label>
+        <textarea [(ngModel)]="selectedProduct.description" rows="4"
+                  placeholder="Description"
+                  class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 
+                         focus:ring-blue-500 focus:border-blue-500 
+                         dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 
+                         dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+      </div>
+  
+  
+      <div class="mt-6 text-right">
+        <button class="bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg text-sm px-6 py-2">
+          Save
+        </button>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+</div>
+<app-footer></app-footer>

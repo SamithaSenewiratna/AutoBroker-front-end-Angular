@@ -7,7 +7,7 @@ import { AllAdsComponent } from './pages/user/all-ads/all-ads.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,HomepageComponent,AllAdsComponent],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

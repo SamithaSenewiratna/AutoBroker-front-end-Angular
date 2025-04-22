@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RegiistorUserComponent } from './regiistor-user.component';
+import { UserProfileComponent } from './user-profile.component';
 
-describe('RegiistorUserComponent', () => {
-  let component: RegiistorUserComponent;
-  let fixture: ComponentFixture<RegiistorUserComponent>;
+describe('UserProfileComponent', () => {
+  let component: UserProfileComponent;
+  let fixture: ComponentFixture<UserProfileComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RegiistorUserComponent]
+      imports: [UserProfileComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(RegiistorUserComponent);
+    fixture = TestBed.createComponent(UserProfileComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
