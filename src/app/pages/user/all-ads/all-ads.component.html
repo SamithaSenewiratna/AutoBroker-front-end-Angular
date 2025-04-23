@@ -1,5 +1,7 @@
 <app-navbar></app-navbar>
 
+
+
 <!-- Sidebar -->
 <div id="default-sidebar" class=" fixed top-14 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidenav">
   <div class="overflow-y-auto pt-10 py-5 px-3 h-full bg-white border-r border-gray-200 dark:bg-gray-800 dark:border-gray-700">
@@ -184,7 +186,7 @@
   <!-- Page Content -->
   <h2 class="mt-13 p-5 text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">Vehical Section</h2>
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-    <!-- Example Product Cardss -->
+    <!--  Product Cardss -->
     
 
       <div 
@@ -235,7 +237,7 @@
   <div
     class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 w-full max-w-4xl h-[700px] overflow-y-auto relative"
   >
-    <!-- Close Button -->
+  
     <button
       (click)="closeModal()"
       class="absolute m-2 top-2 right-2 text-white bg-red-600 hover:bg-red-700 px-3 py-1 rounded"
@@ -243,12 +245,11 @@
       Close
     </button>
 
-    <!-- Title -->
     <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4">
         {{ selectedAd.title }}
     </h2>
 
-    <!-- Carousel Wrapper -->
+   
     <div class="relative h-56 md:h-96 overflow-hidden rounded-lg mb-5">
       <div class="w-full h-full">
         <img
@@ -259,7 +260,7 @@
         />
       </div>
 
-      <!-- Controls -->
+   
       <button
         type="button"
         class="absolute top-0 left-0 z-10 h-full px-4 flex items-center"
@@ -276,7 +277,7 @@
       </button>
     </div>
 
-    <!-- Slide Indicators (optional dots) -->
+  
     <div class="flex justify-center gap-2 mb-4">
       <ng-container *ngFor="let image of selectedAd.images; index as i">
         <button
@@ -290,7 +291,7 @@
       </ng-container>
     </div>
 
-    <!-- Description -->
+  
     <p class="text-gray-700 dark:text-gray-300 mb-2">Brand : {{ selectedAd.brand }}</p>
     <p class="text-gray-700 dark:text-gray-300 mb-2">Model : {{ selectedAd.model }}</p>
     <p class="text-gray-700 dark:text-gray-300 mb-2">Location : {{ selectedAd.location }}</p>
@@ -376,13 +377,6 @@
 
 
 
-
-
-
-
-
-
-
 <!-- Top Up Modal -->
 <div id="topUpModal"
      class="fixed inset-0 z-50 hidden items-center justify-center bg-transparent bg-opacity-40 backdrop-blur-sm backdrop-brightness-75">
@@ -435,10 +429,6 @@
     </form>
   </div>
 </div>
-
-
-
-
 
 
 

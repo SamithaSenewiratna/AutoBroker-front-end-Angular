@@ -34,6 +34,8 @@ interface Advertisement {
 })
 export class AllAdsComponent implements OnInit {
  
+ 
+
   toggleModel() {
     const modal = document.getElementById('topUpModal');
     if (modal?.classList.contains('hidden')) {
@@ -219,7 +221,9 @@ export class AllAdsComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // Any initialization logic can go here
+  }
 
   openAdDetails(ad: Advertisement): void {
     this.selectedAd = ad;

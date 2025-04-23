@@ -1,0 +1,35 @@
+
+<div class="md:hidden  bg-gray-900 p-4 flex justify-between sticky top-0 z-50">
+   
+    <button (click)="toggleSidebar()" class="text-white focus:outline-none">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  
+  <!-- Sidebar -->
+  <aside
+    class="w-64 bg-gray-800 p-5 border-r border-gray-700 fixed top-0 left-0 h-full z-40 transform transition-transform duration-300 ease-in-out md:translate-x-0"
+    [ngClass]="{
+      'translate-x-0': isSidebarOpen || isDesktop,
+      '-translate-x-full': !isSidebarOpen && !isDesktop
+    }">
+    <h2 class="text-xl font-bold mb-6 text-blue-400">Admin Panel</h2>
+    <ul class="space-y-4">
+      <li><a routerLink="/admin-dashboard" class="block px-2 py-1 hover:bg-gray-700 rounded">Dashboard</a></li>
+      <li><a routerLink="/admin-mangeAds" class="block px-2 py-1 hover:bg-gray-700 rounded">Manage Ads</a></li>
+      <li><a routerLink="/admin-mangeUsers" class="block px-2 py-1 hover:bg-gray-700 rounded">Users</a></li>
+      <li><a routerLink="/admin-mangeTopUpRequests" class="block px-2 py-1 hover:bg-gray-700 rounded">Top-Up Requests</a></li>
+      <li><a routerLink="/admin-reports" class="block px-2 py-1 hover:bg-gray-700 rounded">Reports</a></li>
+      <li><a routerLink="/loginUser" class="block px-2 py-1 hover:bg-red-700 rounded">Logout</a></li>
+    </ul>
+  </aside>
+  
+  <!-- Dummy content to push layout -->
+  <main class="md:ml-64  mt-0">
+    <router-outlet></router-outlet>
+  </main>
+  

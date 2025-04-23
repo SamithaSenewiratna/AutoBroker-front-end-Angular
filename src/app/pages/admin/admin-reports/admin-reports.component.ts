@@ -4,11 +4,11 @@ import { NavbarComponent } from "../../../common/navbar/navbar.component";
 import { AdminSideBarComponent } from "../admin-side-bar/admin-side-bar.component";
 
 @Component({
-  selector: 'app-admin-dashboard',
+  selector: 'app-admin-reports',
   imports: [FooterComponent, NavbarComponent, AdminSideBarComponent],
-  templateUrl: './admin-dashboard.component.html',
-  styleUrl: './admin-dashboard.component.css'
+  templateUrl: './admin-reports.component.html',
+  styleUrl: './admin-reports.component.css'
 })
-export class AdminDashboardComponent {
+export class AdminReportsComponent {
 
 }

@@ -3,11 +3,11 @@ import { AdminSideBarComponent } from "../admin-side-bar/admin-side-bar.componen
 import { FooterComponent } from "../../../common/footer/footer.component";
 
 @Component({
-  selector: 'app-admin-manageadds',
+  selector: 'app-admin-manage-users',
   imports: [AdminSideBarComponent, FooterComponent],
-  templateUrl: './admin-manageadds.component.html',
-  styleUrl: './admin-manageadds.component.css'
+  templateUrl: './admin-manage-users.component.html',
+  styleUrl: './admin-manage-users.component.css'
 })
-export class AdminManageaddsComponent {
+export class AdminManageUsersComponent {
 
 }

@@ -1,48 +1,61 @@
-<section class="bg-gray-50 dark:bg-gray-900">
-    <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-        <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
-            <img class="w-8 h-8 mr-2" src="https://img.icons8.com/3d-fluency/50/car.png" alt="logo">
-           Auto Broker   
-        </a>
-        <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
-            <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
-                <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-                    Sign in to your account
-                </h1>
-                <form class="space-y-4 md:space-y-6" action="#">
-                    <div>
-                        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
-                        <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@company.com" required="">
-                    </div>
-                    <div>
-                        <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
-                        <input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="">
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-start">
-                            <div class="flex items-center h-5">
-                              <input id="remember" aria-describedby="remember" type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" required="">
-                            </div>
-                            <div class="ml-3 text-sm">
-                              <label for="remember" class="text-gray-500 dark:text-gray-300">Remember me</label>
-                            </div>
-                        </div>
-                        <a href="#" class="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">Forgot password?</a>
-                    </div>
-                    <button type="submit" routerLink="/homePage" class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Sign in</button>
-                    <p class="text-sm font-light text-gray-500 dark:text-gray-400">
-                        Dont have an account yet? <a href="#" routerLink="/registerUser" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign up</a>
-                    </p>
-                </form>
-            </div>
+
+<section class="min-h-screen bg-gray-900 flex items-center justify-center px-4 py-8">
+    <div class="w-full max-w-6xl bg-gray-800 rounded-2xl shadow-lg overflow-hidden flex flex-col md:flex-row">
+  
+   
+      <div class="w-full md:w-1/2 bg-gradient-to-br from-cyan-700 to-gray-900 flex items-center justify-center p-8 md:p-12">
+        <div class="text-center">
+          <h1 class="text-3xl md:text-4xl font-extrabold text-white mb-4">Welcome Back to Auto Broker</h1>
+          <p class="text-gray-200 text-base md:text-lg">
+            Log in to manage your car ads and connect with potential buyers instantly!
+          </p>
+          <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/authentication/illustration.svg"
+               alt="Illustration"
+               class="mt-6 w-48 md:w-64 mx-auto">
         </div>
+      </div>
+  
+     
+      <div class="w-full md:w-1/2 p-6 sm:p-10 md:p-12">
+        <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">Log in to Your Account</h2>
+  
+        <form class="space-y-5">
+  
+          <div>
+            <label class="block text-sm text-gray-300 mb-1">Email</label>
+            <input type="email" placeholder="you@example.com" required
+                   class="w-full px-4 py-3 bg-gray-700 text-white rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-cyan-500">
+          </div>
+  
+          <div>
+            <label class="block text-sm text-gray-300 mb-1">Password</label>
+            <input type="password" placeholder="••••••••" required
+                   class="w-full px-4 py-3 bg-gray-700 text-white rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-cyan-500">
+          </div>
+  
+          <div class="flex items-center justify-between">
+            <div class="flex items-center">
+              <input type="checkbox" id="remember" class="text-cyan-600 w-4 h-4 bg-gray-700 border-gray-600 rounded">
+              <label for="remember" class="ml-2 text-sm text-gray-400">Remember me</label>
+            </div>
+            <a href="#" class="text-sm text-cyan-400 hover:underline">Forgot Password?</a>
+          </div>
+  
+          <button routerLink="/homePage" 
+                  class="w-full bg-cyan-600 hover:bg-cyan-700 transition text-white font-semibold py-3 rounded-lg">
+                 
+                  Log In
+          </button>
+  
+          <p class="text-center text-sm text-gray-400">
+            Don't have an account?
+            <a routerLink="/signuUpUser" class="text-cyan-400 hover:underline">Sign up here</a>
+          </p>
+  
+        </form>
+      </div>
+  
     </div>
   </section>
-
-
-
-
-
-
-
+  
   

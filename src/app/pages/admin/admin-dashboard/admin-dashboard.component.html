@@ -1,1 +1,99 @@
-<p>admin-dashboard works!</p>
+
+<div class="bg-gray-900 text-white min-h-screen">
+    <div class="flex flex-col md:flex-row">
+  
+      <!-- Sidebar  -->
+      <admin-side-bar ></admin-side-bar>
+  
+      <!-- Main Content -->
+      <div class="flex-1 p-4 sm:p-6 md:ml-0 mr-0 mt-4">
+     
+        <header class="mb-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+          <h2 class="text-2xl sm:text-3xl font-bold text-blue-400">Admin Dashboard</h2>
+          <div class="text-sm text-gray-400">Welcome, Admin</div>
+        </header>
+  
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+          <div class="bg-gray-800 p-4 rounded-xl border border-gray-700">
+            <h3 class="text-blue-300 text-lg">Total Ads</h3>
+            <p class="text-2xl font-bold mt-2">215</p>
+          </div>
+          <div class="bg-gray-800 p-4 rounded-xl border border-gray-700">
+            <h3 class="text-blue-300 text-lg">Users</h3>
+            <p class="text-2xl font-bold mt-2">1,234</p>
+          </div>
+          <div class="bg-gray-800 p-4 rounded-xl border border-gray-700">
+            <h3 class="text-blue-300 text-lg">Top-Ups</h3>
+            <p class="text-2xl font-bold mt-2">LKR 85,000</p>
+          </div>
+          <div class="bg-gray-800 p-4 rounded-xl border border-gray-700">
+            <h3 class="text-blue-300 text-lg">Reports</h3>
+            <p class="text-2xl font-bold mt-2">58</p>
+          </div>
+        </div>
+  
+        <!-- Filters -->
+        <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 mb-6">
+          <h3 class="text-xl font-semibold text-blue-300 mb-4">Filter Reports</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div>
+              <label class="block text-sm mb-1 text-gray-300">From</label>
+              <input type="date" class="w-full px-4 py-2 bg-gray-700 rounded border border-gray-600" />
+            </div>
+            <div>
+              <label class="block text-sm mb-1 text-gray-300">To</label>
+              <input type="date" class="w-full px-4 py-2 bg-gray-700 rounded border border-gray-600" />
+            </div>
+            <div>
+              <label class="block text-sm mb-1 text-gray-300">Report Type</label>
+              <select class="w-full px-4 py-2 bg-gray-700 rounded border border-gray-600">
+                <option>All</option>
+                <option>Ads</option>
+                <option>Users</option>
+                <option>Top-Ups</option>
+              </select>
+            </div>
+          </div>
+          <div class="text-right mt-4">
+            <button class="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded">Generate</button>
+          </div>
+        </div>
+  
+       
+        <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
+          <h3 class="text-xl font-semibold text-blue-300 mb-4">Latest Reports</h3>
+          <div class="overflow-x-auto">
+            <table class="min-w-full text-left text-sm">
+              <thead class="bg-gray-700 text-blue-300">
+                <tr>
+                  <th class="p-3">#</th>
+                  <th class="p-3">Type</th>
+                  <th class="p-3">Details</th>
+                  <th class="p-3">Date</th>
+                </tr>
+              </thead>
+              <tbody class="text-gray-300">
+                <tr class="border-b border-gray-700 hover:bg-gray-700">
+                  <td class="p-3">1</td>
+                  <td class="p-3">Ad Posted</td>
+                  <td class="p-3">Nissan Leaf 2020 - by user456</td>
+                  <td class="p-3">2025-04-22</td>
+                </tr>
+                <tr class="border-b border-gray-700 hover:bg-gray-700">
+                  <td class="p-3">2</td>
+                  <td class="p-3">Top-Up</td>
+                  <td class="p-3">LKR 2000 by user123</td>
+                  <td class="p-3">2025-04-20</td>
+                </tr>
+              
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+<app-footer></app-footer>
