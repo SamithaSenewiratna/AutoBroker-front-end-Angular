@@ -23,10 +23,8 @@ interface Advertisement {
   mileage?: string;
   contact?: string;
   createdAt?: string;
-  images: string[]; // Properly typed as string array
+  images: string[]; 
 }
-
-
 
 
 
@@ -37,7 +35,12 @@ interface Advertisement {
   styleUrl: './myadds.component.css'
 })
 export class MyaddsComponent {
-
+delete(arg0: number) {
+throw new Error('Method not implemented.');
+}
+update() {
+throw new Error('Method not implemented.');
+}
 
 
 
@@ -60,7 +63,7 @@ onFileSelected($event: Event) {
     if (file) {
       const reader = new FileReader();
       reader.onload = () => {
-        //  Replace the image in selectedProduct.images array
+      
         this.selectedProduct.images[index] = reader.result as string;
       };
       reader.readAsDataURL(file);
@@ -69,14 +72,11 @@ onFileSelected($event: Event) {
   
 
 
-
-
 triggerFileInput(index: number) {
   const input = document.getElementById('mainImageInput' + index) as HTMLInputElement;
   if (input) input.click();
   
 }
-
 
   advertisements: Advertisement[] = [
     {
