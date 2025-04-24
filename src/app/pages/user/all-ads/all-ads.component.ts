@@ -22,7 +22,7 @@ interface Advertisement {
   mileage?: string;
   contact?: string;
   createdAt?: string;
-  images: string[]; // Properly typed as string array
+  images: string[]; 
 }
 
 @Component({
@@ -75,7 +75,7 @@ export class AllAdsComponent implements OnInit {
   }
   
   confirmLogout(): void {
-   window.location.href = '/loginUser'; // or your logout route
+   window.location.href = '/loginUser'; /
   }
   
 
@@ -222,7 +222,6 @@ export class AllAdsComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    // Any initialization logic can go here
   }
 
   openAdDetails(ad: Advertisement): void {
