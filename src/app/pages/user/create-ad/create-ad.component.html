@@ -1,129 +1,198 @@
 <section class="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900 p-4 sm:p-6">
-    <button routerLink="/AllAds"
+  <button routerLink="/AllAds"
     class="absolute top-4 left-4 text-white bg-transparent border-b-2 border-cyan-700 hover:bg-cyan-700 px-3 py-1 rounded">
     Back
   </button>
-    <div class="w-full max-w-7xl bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 sm:p-8 mt-10 mb-10 relative">
-      <label class="block mb-4 text-2xl font-medium text-gray-900 dark:text-white">Create ad</label>
-  
-     
-  
-      <form class="space-y-6">
-   
+  <div class="w-full max-w-7xl bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 sm:p-8 mt-10 mb-10 relative">
+    <label class="block mb-4 text-2xl font-medium text-gray-900 dark:text-white">Create Ad</label>
+
+    <form  class="space-y-6">
+      <!-- Location -->
+      <div>
+        <label for="location" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Location</label>
+        <select [(ngModel)]="newCarAd.location" name="location"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:text-white" required>
+          <option disabled selected value="">Select city</option>
+          <option>Ampara</option>
+          <option>Anuradhapura</option>
+          <option>Badulla</option>
+          <option>Batticaloa</option>
+          <option>Colombo</option>
+          <option>Galle</option>
+          <option>Gampaha</option>
+          <option>Hambantota</option>
+          <option>Jaffna</option>
+          <option>Kalutara</option>
+          <option>Kandy</option>
+          <option>Kegalle</option>
+          <option>Kilinochchi</option>
+          <option>Kurunegala</option>
+          <option>Mannar</option>
+          <option>Matale</option>
+          <option>Matara</option>
+          <option>Monaragala</option>
+          <option>Mullaitivu</option>
+          <option>Nuwara Eliya</option>
+          <option>Polonnaruwa</option>
+          <option>Puttalam</option>
+          <option>Ratnapura</option>
+          <option>Trincomalee</option>
+          <option>Vavuniya</option>
+        </select>
+      </div>
+
+      <!-- Title -->
+      <div>
+        <label for="title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</label>
+        <input type="text" id="title" [(ngModel)]="newCarAd.title" name="title" placeholder="Ad title"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:text-white" required />
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Brand -->
         <div>
-          <label for="location" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Location</label>
-          <select  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-            <option disabled selected>Select city</option>
-        
+          <label for="brand" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Brand</label>
+          <select [(ngModel)]="newCarAd.brand" name="brand"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:text-white" required>
+            <option disabled selected value="">Select brand</option>
+            <option>Toyota</option>
+            <option>Nissan</option>
+            <option>Honda</option>
+            <option>Suzuki</option>
+            <option>Mitsubishi</option>
+            <option>Subaru</option>
+            <option>Isuzu</option>
+            <option>Mahindra</option>
+            <option>Tata</option>
+            <option>Hyundai</option>
+            <option>Kia</option>
+            <option>Ford</option>
+            <option>Chevrolet</option>
+            <option>BMW</option>
+            <option>Mercedes-Benz</option>
+            <option>Audi</option>
+            <option>Volkswagen</option>
+            <option>Peugeot</option>
+            <option>Renault</option>
+            <option>Land Rover</option>
+            <option>Jeep</option>
+            <option>Lexus</option>
+            <option>Perodua</option>
+            <option>Proton</option>
           </select>
         </div>
-  
-    
-        <div>
-          <label for="title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</label>
-          <input type="text" id="title" placeholder="Type"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
-        </div>
- 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-          <div>
-            <label for="carBrand" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Brand Name</label>
-            <select  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-              <option disabled selected>Select brand</option>
-        
-            </select>
-          </div>
-  
-      
-          <div>
-            <label for="year" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Manufactured by</label>
-            <select  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-              <option disabled selected>Select year</option>
-            
-            </select>
-          </div>
-  
-          <div>
-            <label for="fuelType" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Fuel Type</label>
-            <select  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-              <option disabled selected>Select fuel type</option>
-            
-            </select>
-          </div>
-  
-       
-          <div>
-            <label for="transmission" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Transmission</label>
-            <select  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-              <option disabled selected>Select transmission</option>
-             
-            </select>
-          </div>
+        <!-- Model -->
+        <div>
+          <label for="model" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Model</label>
+          <input type="text" id="model" [(ngModel)]="newCarAd.model" name="model" placeholder="Car model (e.g., Vitz, Axio)"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:text-white" required />
         </div>
-  
+
+        <!-- Year -->
+        <div>
+          <label for="year" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Year</label>
+          <select [(ngModel)]="newCarAd.year" name="year"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:text-white" required>
+          <option disabled selected value="">Select year</option>
+          <option>2000</option>
+          <option>2001</option>
+          <option>2002</option>
+          <option>2003</option>
+          <option>2004</option>
+          <option>2005</option>
+         
+        </select>
+        </div>
+
+        <!-- Fuel Type -->
+        <div>
+          <label for="fuelType" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Fuel Type</label>
+          <select [(ngModel)]="newCarAd.fuelType" name="fuelType"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:text-white" required>
+            <option disabled selected value="">Select fuel type</option>
+            <option>Petrol</option>
+            <option>Diesel</option>
+            <option>Hybrid</option>
+            <option>Electric</option>
+          </select>
+        </div>
+
+        <!-- Transmission -->
+        <div>
+          <label for="transmission" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Transmission</label>
+          <select [(ngModel)]="newCarAd.transmission" name="transmission"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:text-white" required>
+            <option disabled selected value="">Select transmission</option>
+            <option>Automatic</option>
+            <option>Manual</option>
+            <option>CVT</option>
+          </select>
+        </div>
+
+        <!-- Condition -->
         <div>
           <label for="condition" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Condition</label>
-          <select  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-            <option disabled selected>Select condition</option>
-      
+          <select [(ngModel)]="newCarAd.condition" name="condition"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:text-white" required>
+            <option disabled selected value="">Select condition</option>
+            <option>New</option>
+            <option>Used</option>
           </select>
         </div>
-  
-     
-        <div>
-          <label for="millage" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Millage</label>
-          <input type="text" id="millage" placeholder="1200cc"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
-        </div>
-  
- 
-        <div>
-          <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Contact Number</label>
-          <input type="tel" id="contact" placeholder="+94"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
-        </div>
-  
- 
+
+        <!-- Price -->
         <div>
           <label for="price" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Price</label>
-          <input type="text" id="price" placeholder="LKR"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+          <input type="number" id="price" [(ngModel)]="newCarAd.price" name="price" placeholder="Price"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:text-white" required />
         </div>
-  
-        <!-- Main Image Upload -->
+
+        <!-- Engine Capacity -->
         <div>
-          <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Main Image</label>
-          <div class="flex items-center gap-4">
-            <img [src]="mainImagePreview || defaultMainImage" alt="Main Image Preview"
-              class="w-40 h-32 object-cover rounded border border-gray-300 dark:border-gray-600 cursor-pointer"
-              (click)="triggerMainImageInput()" />
-            <input type="file" id="mainImageInput" class="hidden" (change)="onMainImageSelected($event)" />
-          </div>
+          <label for="engineCapacity" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Engine Capacity</label>
+          <input type="text" id="engineCapacity" [(ngModel)]="newCarAd.engineCapacity" name="engineCapacity" placeholder="e.g., 1500cc"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:text-white" required />
         </div>
-  
-        <!-- More Images Upload -->
+
+        <!-- Mileage -->
         <div>
-          <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Upload More Images</label>
-          <div class="flex flex-wrap gap-4">
-            <ng-container *ngFor="let img of imagePreviews; let i = index">
-              <div (click)="triggerFileInput(i)">
-                <img class="w-24 h-20 rounded object-cover cursor-pointer" [src]="img || defaultImage" alt="Upload Preview" />
-              </div>
-              <input type="file" class="hidden" />
-            </ng-container>
-          </div>
+          <label for="mileage" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Mileage</label>
+          <input type="text" id="mileage" [(ngModel)]="newCarAd.mileage" name="mileage" placeholder="e.g., 50,000 km"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:text-white" required />
         </div>
 
-        <div>
-          <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
-          <textarea id="description" rows="4" placeholder="Type your description here..." class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
-
+        <!-- Contact -->
+        <div class="col-span-2">
+          <label for="contact" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Contact Info</label>
+          <input type="text" id="contact" [(ngModel)]="newCarAd.contact" name="contact" placeholder="Phone or email"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:text-white" required />
         </div>
+      </div>
+
+      <!-- Description -->
+      <div>
+        <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
+        <textarea id="description" [(ngModel)]="newCarAd.description" name="description" placeholder="Describe your vehicle"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:text-white" rows="4" required></textarea>
+      </div>
+
+      <!-- Image Upload -->
+      <div>
+        <label for="images" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Upload Images (Max 4)</label>
+        <input type="file" id="images" (change)="onFileSelected($event)" multiple
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:text-white" accept="image/*" />
+      </div>
 
 
-        <div class="flex justify-center mt-16">
-          <button type="submit" (click)="submitAd()" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg">Create Ad</button>
-        </div>
+      
 
-
-      </form>
-    </div>
-  </section>
-  
+      <div class="flex justify-between items-center">
+        <button (click)=" submitAd() "
+          class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5">
+          Create Ad
+        </button>
+      </div>
+    </form>
+  </div>
+</section>

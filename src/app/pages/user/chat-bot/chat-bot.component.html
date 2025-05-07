@@ -1,98 +1,88 @@
 <app-navbar></app-navbar>
 
-<div id="background" class="bg-gray-50 dark:bg-gray-900 h-screen">
+<div id="background" class="bg-gray-50 dark:bg-gray-900 min-h-screen">
   
-    <section class="min-h-screen bg-gray-900 text-white px-6 py-12">
-        <div class="mt-20 mb-20 max-w-4xl mx-auto">
-       
-          <h1 class="text-4xl font-extrabold mb-6 text-center text-blue-400">Meet AutoBot – Your Smart Vehical Assistant 🤖</h1>
-      
-        
-          <p class="text-lg mb-6 text-gray-300 text-center">
-            AutoBot is here to make your car buying experience easier, faster, and smarter.
-            Ask anything – from finding the best deals to understanding car specs – and AutoBot will guide you through.
+  <section class="min-h-screen bg-gray-900 text-white px-6 py-12">
+    <div class="mt-20 mb-20 max-w-4xl mx-auto">
+      <h1 class="text-4xl font-extrabold mb-6 text-center text-blue-400">
+        Meet AutoBot – Your Smart Vehicle Assistant 🤖
+      </h1>
+
+      <p class="text-lg mb-6 text-gray-300 text-center">
+        AutoBot is here to make your car buying experience easier, faster, and smarter.
+        Ask anything – from finding the best deals to understanding car specs – and AutoBot will guide you through.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
+          <h2 class="text-xl font-semibold mb-2 text-blue-300">🔍 Find Cars Instantly</h2>
+          <p class="text-gray-400">
+            AutoBot can help you find vehicles by brand, fuel type, location, price, or condition – just type your preferences.
           </p>
-      
-    
-          <div class="grid md:grid-cols-2 gap-8">
-            <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
-              <h2 class="text-xl font-semibold mb-2 text-blue-300">🔍 Find Cars Instantly</h2>
-              <p class="text-gray-400">AutoBot can help you find vehicles by brand, fuel type, location, price, or condition – just type your preferences.</p>
-            </div>
-      
-            <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
-              <h2 class="text-xl font-semibold mb-2 text-blue-300">⚙️ Understand Features</h2>
-              <p class="text-gray-400">Get detailed explanations of car features, transmission types, engine capacities, and more in simple terms.</p>
-            </div>
-      
-            <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
-              <h2 class="text-xl font-semibold mb-2 text-blue-300">🧾 Help with Ads</h2>
-              <p class="text-gray-400">Need help posting or editing an ad? Just ask AutoBot, and it’ll walk you through the steps.</p>
-            </div>
-      
-            <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
-              <h2 class="text-xl font-semibold mb-2 text-blue-300">💬 24/7 Smart Support</h2>
-              <p class="text-gray-400">AutoBot is always available to answer your car-related questions – no waiting, no pressure.</p>
-            </div>
-          </div>
-      
-    
-          <div class="mt-12 text-center">
-            <p class="text-lg mb-4">Ready to chat? Click the button below to start a conversation with AutoBot!</p>
-            <button (click)="toggleChatbot()" class="bg-blue-700 hover:bg-blue-800 text-white font-medium px-6 py-3 rounded-lg focus:ring-4 focus:ring-blue-500">
-              Start Chatting
-            </button>
-          </div>
         </div>
-      </section>
-      
 
+        <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
+          <h2 class="text-xl font-semibold mb-2 text-blue-300">⚙️ Understand Features</h2>
+          <p class="text-gray-400">
+            Get detailed explanations of car features, transmission types, engine capacities, and more in simple terms.
+          </p>
+        </div>
 
+        <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
+          <h2 class="text-xl font-semibold mb-2 text-blue-300">🧾 Help with Ads</h2>
+          <p class="text-gray-400">
+            Need help posting or editing an ad? Just ask AutoBot, and it’ll walk you through the steps.
+          </p>
+        </div>
 
+        <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
+          <h2 class="text-xl font-semibold mb-2 text-blue-300">💬 24/7 Smart Support</h2>
+          <p class="text-gray-400">
+            AutoBot is always available to answer your car-related questions – no waiting, no pressure.
+          </p>
+        </div>
+      </div>
 
+      <div class="mt-12 text-center">
+        <p class="text-lg mb-4">Ready to chat? Click the button below to start a conversation with AutoBot!</p>
+        <button (click)="toggleChatbot()" class="bg-blue-700 hover:bg-blue-800 text-white font-medium px-6 py-3 rounded-lg focus:ring-4 focus:ring-blue-500">
+          Start Chatting
+        </button>
+      </div>
+    </div>
+  </section>
 
+  <!-- Chatbot Modal -->
+  <div id="chatbotModal"
+    class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-40 backdrop-blur-sm">
+    <div class="relative w-full max-w-md p-4 bg-gray-800 rounded-2xl shadow-xl border border-gray-700">
 
-<!-- Chatbot Modal -->
-
-    <div id="chatbotModal"
-    class="fixed inset-0 z-50 hidden items-center justify-center bg-transparent bg-opacity-40 backdrop-blur-sm backdrop-brightness-75"> 
-    <div class="relative w-full max-w-md  p-4 bg-gray-800 rounded-2xl shadow-xl border border-gray-700">
-  
-      <button (click)="toggleChatbot()" class="absolute top-2 right-2 text-gray-400 hover:text-white">
+      <button (click)="toggleChatbot()" class="absolute top-2 right-2 text-gray-100 hover:text-white">
         ✖
       </button>
-  
-   
+
       <h2 class="text-xl font-semibold text-blue-300 mb-4 text-center">💬 Chat with AutoBot</h2>
-  
-      
-      <div class="h-92  overflow-y-auto p-3 bg-gray-900 rounded-xl mb-4 border border-gray-700">
-        <p class="text-sm text-gray-400 mb-2">👋 Hi! I'm AutoBot. Ask me anything about vehicals.</p>
-      
-        <!-- <app-chatbot></app-chatbot> -->
+
+      <div id="chat-box" class="h-96 overflow-y-auto p-3 bg-gray-900 rounded-xl mb-4 border border-gray-700">
+        <p class="text-sm text-gray-100 mb-2">👋 Hi! I'm AutoBot. Ask me anything about vehicles.</p>
       </div>
-  
- 
+
       <div class="flex items-center gap-2">
         <input
+          id="user-input"
+          [(ngModel)]="userInput"
           type="text"
           placeholder="Type your message..."
-          class="flex-1 px-4 py-2 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:ring focus:ring-blue-500 outline-none"
+          class=" flex-1 px-4 py-2 rounded-lg bg-gray-700 text-white placeholder-gray-200 focus:ring focus:ring-blue-500 outline-none"
+          (keydown.enter)="sendMessage()"
         />
-        <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg">
+        <button (click)="sendMessage()" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg">
           Send
         </button>
       </div>
     </div>
   </div>
-  
 
-
-  <app-footer  ></app-footer>
+  <app-footer></app-footer>
 
 </div>
-
-
-  
-
-
