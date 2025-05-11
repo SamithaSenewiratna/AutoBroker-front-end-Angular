@@ -2,17 +2,17 @@
 
 <div class="min-h-screen flex flex-col-reverse justify-center bg-gray-100 dark:bg-gray-900">
   <div class="mx-10  rounded lg:mx-30 relative overflow-x-auto shadow-md sm:rounded-lg">
-    <table class="mt-0 w-full rounded text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+    <table class="mt-15 w-full rounded text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
       <thead class=" text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
         <tr>
           <th class="px-4 py-3">Image</th>
           <th class="px-4 py-3">Product Name</th>
-          <th class="px-4 py-3">Category</th>
+          <th class="px-4 py-3">Model</th>
           <th class="px-4 py-3">Brand</th>
-          <th class="px-4 py-3">Condition</th>
+          <th class="px-4 py-3">Date</th>
           <th class="px-4 py-3">City</th>
-          <th class="px-4 py-3">Price</th>
           <th class="px-4 py-3">Fuel Type</th>
+          <th class="px-4 py-3">Price</th>
           <th class="px-4 py-3">Actions</th>
         </tr>
       </thead>
@@ -22,12 +22,13 @@
             <img [src]="product.images?.[0]" alt="Product Image" class="w-20 h-20 rounded object-cover" />
           </td>
           <td class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ product.title }}</td>
-          <td class="px-4 py-3">{{ product.EngineCapacity }}</td>
+          <td class="px-4 py-3">{{ product.model }}</td>
+         
           <td class="px-4 py-3">{{ product.brand }}</td>
-          <td class="px-4 py-3">{{ product.condition }}</td>
+          <td class="px-4 py-3">{{ product.createdAt }}</td>
           <td class="px-4 py-3">{{ product.location }}</td>
+          <td class="px-4 py-3">{{ product.fuelType }}</td>
           <td class="px-4 py-3">{{ product.price }}</td>
-          <td class="px-4 py-3">{{ product.brand }}</td>
           <td class="px-4 py-3 space-x-2">
             <button (click)="openEditModal(product)" class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-1.5 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">
               Edit

@@ -1,6 +1,6 @@
 import { Component, NgModule} from '@angular/core';
 import { NavbarComponent } from '../../../common/navbar/navbar.component';
-import { FormsModule } from '@angular/forms'; // Import FormsModule for ngModel
+import { FormsModule } from '@angular/forms'; 
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -9,7 +9,6 @@ import { CommonModule } from '@angular/common';
   templateUrl: './user-profile.component.html',
   styleUrl: './user-profile.component.css'
 })
-
 
 
 export class UserProfileComponent {
@@ -23,8 +22,8 @@ export class UserProfileComponent {
 
 
   profile = {
-    name: 'samitha',
-    email: 'samitha@example.com',
+    name: 'samitha senewirathna',
+    email: 'samithani17@gmail.com',
     password: 'password',
     phone: '077-1234567',
     location: 'panaduara',
