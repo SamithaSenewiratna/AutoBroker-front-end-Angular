@@ -46,40 +46,46 @@ Auto Broker is a full-featured web application that connects vehicle sellers, bu
 ## 📸 Screenshots
 
 ### 🔐 Login Page
-![Login Page](screenshots/login.png)
+![Login Page](screenshots/1.png)
 
 ### 📝 Signup Page
-![Signup Page](screenshots/signup.png)
+![Signup Page](screenshots/2.png)
+
+### 🏠 Home Page
+![Signup Page](screenshots/3.png)
 
 ### 🚗 Vehicle Section
-![Vehicle Section](screenshots/vehicle-section.png)
+![Vehicle Section](screenshots/5.png)
+
+### 📸 View Ad Images
+![View Ad Images](screenshots/12.png)
 
 ### 🔧 Auto Parts Section
-![Auto Parts Page](screenshots/autoparts.png)
-
-### 👤 Profile Page
-![Profile Page](screenshots/profile.png)
+![Auto Parts Page](screenshots/6.png)
 
 ### 💬 AI Chatbot
-![Chatbot](screenshots/chatbot.png)
+![Chatbot](screenshots/8.png)
 
 ### ℹ️ About Us Page
-![About Us Page](screenshots/aboutus.png)
+![About Us Page](screenshots/9.png)
 
 
 ## 📸 Advertisement Management Screens
 
 ### 📋 My Ads Page
 Easily view and manage all your posted car or spare part advertisements in one place.
-![My Ads Page](screenshots/my-ads.png)
+![My Ads Page](screenshots/7.png)
 
 ### ➕ Create Advertisement Page
 Post a new ad by filling in detailed vehicle or spare part information and uploading images.
-![Create Ad Page](screenshots/create-ad.png)
+![Create Ad Page](screenshots/10.png)
 
 ### ✏️ Update Advertisement Page
 Edit your existing ads with updated information and images.
-![Update Ad Page](screenshots/update-ad.png)
+![Update Ad Page](screenshots/11.png)
+
+### 👤 Profile Page
+![Profile Page](screenshots/4.png)
 
 
 
