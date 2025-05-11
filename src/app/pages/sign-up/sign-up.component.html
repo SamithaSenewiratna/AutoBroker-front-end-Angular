@@ -1,12 +1,10 @@
-
-
 <section class="min-h-screen bg-gray-900 flex items-center justify-center px-4 py-8">
-    <div class=" w-full max-w-2xl bg-gray-800 bg-opacity-90 rounded-2xl shadow-2xl p-8 md:p-12 backdrop-blur-md">
+  <div class="w-full max-w-2xl bg-gray-800 bg-opacity-90 rounded-2xl shadow-2xl p-8 md:p-12 backdrop-blur-md">
+    <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-2">Create your Auto Broker account</h2>
+    <p class="text-center text-gray-400 mb-6">Start posting ads and managing your listings with ease.</p>
   
-      <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-2">Create your Auto Broker account</h2>
-      <p class="text-center text-gray-400 mb-6">Start posting ads and managing your listings with ease.</p>
-  
-      <div class="space-y-4 mb-6">
+
+  <div class="space-y-4 mb-6">
         <button type="button" class="w-full flex items-center justify-center bg-white text-gray-900 py-2.5 rounded-lg shadow hover:bg-gray-100 transition">
           <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google logo" class="w-5 h-5 mr-3">
           Sign up with Google
@@ -17,55 +15,48 @@
           Sign up with Facebook
         </button>
       </div>
-  
-     
-   
-      <form class="space-y-3">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <label class="block text-sm text-gray-300 mb-1">Name</label>
-              <input type="text" placeholder="Enter Your Name" required
-                class="w-full px-4 py-2 rounded-lg bg-gray-800 text-white border border-gray-700 focus:ring-2 focus:ring-cyan-500 focus:outline-none">
-            </div>
-          
-            <div>
-              <label class="block text-sm text-gray-300 mb-1">Email</label>
-              <input type="email" placeholder="Enter Your Email" required
-                class="w-full px-4 py-2 rounded-lg bg-gray-800 text-white border border-gray-700 focus:ring-2 focus:ring-cyan-500 focus:outline-none">
-            </div>
-          </div>
-          
-  
-        <div>
-          <label class="block text-sm text-gray-300 mb-1">Password</label>
-          <input type="password" placeholder="••••••••" required
-            class="w-full px-4 py-2 rounded-lg bg-gray-800 text-white border border-gray-700 focus:ring-2 focus:ring-cyan-500 focus:outline-none">
-        </div>
-  
-        <div>
-          <label class="block text-sm text-gray-300 mb-1">Confirm Password</label>
-          <input type="password" placeholder="••••••••" required
-            class="w-full px-4 py-2 rounded-lg bg-gray-800 text-white border border-gray-700 focus:ring-2 focus:ring-cyan-500 focus:outline-none">
-        </div>
-  
-        <div class="flex items-center text-sm text-gray-400">
-          <input type="checkbox" id="terms"
-            class="w-4 h-4 text-cyan-600 bg-gray-800 border-gray-700 rounded focus:ring-cyan-500">
-          <label for="terms" class="ml-2">I agree to the <a href="#" class="text-cyan-400 underline">terms and
-              conditions</a></label>
-        </div>
-  
-        <button type="submit"
-          class="w-full py-3 bg-cyan-600 hover:bg-cyan-700 transition rounded-lg text-white font-semibold">
-          Sign Up
-        </button>
-  
-        <p class="text-center text-sm text-gray-400 mt-4">
-          Already have an account? <a routerLink="/loginUser" class="text-cyan-400 hover:underline">Sign in</a>
-        </p>
-  
-      </form>
-    </div>
-  </section>
-  
 
+    <form class="space-y-3">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="block text-sm text-gray-300 mb-1">Name</label>
+          <input type="text" [(ngModel)]="name" name="userName" placeholder="Enter Your Name" required
+            class="w-full px-4 py-2 rounded-lg bg-gray-800 text-white border border-gray-700 focus:ring-2 focus:ring-cyan-500 focus:outline-none">
+        </div>
+        
+        <div>
+          <label class="block text-sm text-gray-300 mb-1">Email</label>
+          <input type="email" [(ngModel)]="email" name="email" placeholder="Enter Your Email" required
+            class="w-full px-4 py-2 rounded-lg bg-gray-800 text-white border border-gray-700 focus:ring-2 focus:ring-cyan-500 focus:outline-none">
+        </div>
+      </div>
+  
+      <div>
+        <label class="block text-sm text-gray-300 mb-1">Password</label>
+        <input type="password" [(ngModel)]="password" name="password" placeholder="••••••••" required
+          class="w-full px-4 py-2 rounded-lg bg-gray-800 text-white border border-gray-700 focus:ring-2 focus:ring-cyan-500 focus:outline-none">
+      </div>
+  
+      <div>
+        <label class="block text-sm text-gray-300 mb-1">Confirm Password</label>
+        <input type="password" [(ngModel)]="confirmPassword" name="confirmPassword" placeholder="••••••••" required
+          class="w-full px-4 py-2 rounded-lg bg-gray-800 text-white border border-gray-700 focus:ring-2 focus:ring-cyan-500 focus:outline-none">
+      </div>
+  
+      <div class="flex items-center text-sm text-gray-400">
+        <input type="checkbox" [(ngModel)]="terms" name="terms" id="terms"
+          class="w-4 h-4 text-cyan-600 bg-gray-800 border-gray-700 rounded focus:ring-cyan-500">
+        <label for="terms" class="ml-2">I agree to the <a href="#" class="text-cyan-400 underline">terms and conditions</a></label>
+      </div>
+  
+      <button (click)="signUp()" type="button"
+        class="w-full py-3 bg-cyan-600 hover:bg-cyan-700 transition rounded-lg text-white font-semibold">
+        Sign Up
+      </button>
+  
+      <p class="text-center text-sm text-gray-400 mt-4">
+        Already have an account? <a routerLink="/loginUser" class="text-cyan-400 hover:underline">Sign in</a>
+      </p>
+    </form>
+  </div>
+</section>
