@@ -84,8 +84,50 @@ Post a new ad by filling in detailed vehicle or spare part information and uploa
 Edit your existing ads with updated information and images.
 ![Update Ad Page](screenshots/11.png)
 
+
 ### 👤 Profile Page
 ![Profile Page](screenshots/4.png)
+
+
+
+
+
+
+## 📸 Admin Screens
+
+### 🧭 Admin Dashboard  
+A centralized dashboard providing a quick overview of platform statistics including total ads, users, top-ups, and reports.
+
+![Admin Dashboard](screenshots/admin-dashboard.png)
+
+---
+
+### 📢 Advertisement Management  
+Admins can view and manage all advertisements. Actions include:
+- View ad details
+- Approve or reject pending ads
+- Edit or delete existing ads
+
+![Manage Ads Page](screenshots/admin-manage-ads.png)
+
+---
+
+### 👥 User Management  
+Admins can manage all registered users with ease. Features include:
+- View user list
+- Search and filter users
+- Manage user access or status
+
+![Manage Users](screenshots/admin-manage-users.png)
+
+---
+
+## 📱 Responsive Design  
+The admin panel is fully responsive and optimized for all device sizes including mobile phones, tablets, and desktops.
+
+![Mobile View](screenshots/mobile-view.png)
+
+
 
 
 
