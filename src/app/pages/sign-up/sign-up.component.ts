@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-sign-up',
@@ -10,14 +11,22 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   imports: [ReactiveFormsModule, CommonModule, RouterLink, FormsModule],
   styleUrls: ['./sign-up.component.css']
 })
-export class SignUpComponent {
+export class SignUpComponent implements OnInit {
+  ngOnInit() {
+     this.showSuccess = true;
+  }
+  
+  
   name: string = '';
   email: string = '';
   password: string = '';
   confirmPassword: string = '';
+  role: string = ''; 
+  status: string = ''; 
   terms: boolean = false;
 
   imgUrl: string = 'https://example.com/default-profile.png';
+  showSuccess: boolean = false;
 
   constructor(private router: Router) {}
 
@@ -33,8 +42,11 @@ export class SignUpComponent {
     }
 
     const userPayload = {
+      name: this.name,
+      role: this.role || 'user',
       email: this.email,
       password: this.password,
+      status: this.status || 'Active',
       imgUrl: this.imgUrl
     };
 
@@ -48,8 +60,12 @@ export class SignUpComponent {
       });
 
       if (response.ok) {
-        alert('Account created successfully!');
-        this.router.navigate(['/loginUser']);
+        this.showSuccess = true;
+
+        setTimeout(() => {
+          this.showSuccess = false;
+          this.router.navigate(['/loginUser']);
+        }, 1700);
       } else {
         const errorText = await response.text();
         console.error('Server error:', errorText);

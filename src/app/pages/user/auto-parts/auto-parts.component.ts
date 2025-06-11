@@ -78,4 +78,21 @@ export class AutoPartsComponent implements OnInit {
   goToSlide(index: number): void {
     this.activeSlideIndex = index;
   }
+
+
+    toggleLogoutModal() {
+    const modal = document.getElementById('logoutModal');
+    if (modal?.classList.contains('hidden')) {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    } else {
+      modal?.classList.add('hidden');
+      modal?.classList.remove('flex');
+    }
+  }
+
+   confirmLogout(): void {
+    window.location.href = '/loginUser';
+  }
+
 }

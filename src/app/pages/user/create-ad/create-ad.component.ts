@@ -65,6 +65,9 @@ export class CreateAdComponent {
         )
       );
       console.log('Ad added!', response);
+      alert('Ad added successfully!');
+      closemodel();
+
     } catch (err) {
       console.error('Error adding ad:', err);
     }
@@ -79,3 +82,11 @@ export class CreateAdComponent {
     }
   }
 }
+function closemodel() {
+  const modal = document.getElementById('model');
+  if (modal) {
+    modal.style.display = 'none';
+  }
+  window.location.reload(); 
+}
+

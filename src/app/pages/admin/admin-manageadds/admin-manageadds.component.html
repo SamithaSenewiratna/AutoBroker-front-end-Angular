@@ -1,74 +1,75 @@
 <div class="min-h-screen bg-gray-900 text-white flex flex-col md:flex-row">
-  
-    <!-- Sidebar -->
-    <admin-side-bar ></admin-side-bar>
-  
-    <!-- Main Content -->
-    <main class="w-full  p-4 sm:p-6 mt-6">
-      <h1 class="text-2xl sm:text-3xl font-bold text-blue-400 mb-6">📢 Manage All Ads</h1>
-  
-    
-      <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mb-6">
-        <input
-          type="text"
-          placeholder="Search ads by title or user..."
-          class="px-4 py-2 w-full sm:w-1/2 rounded-lg bg-gray-700 text-white border border-gray-600 placeholder-gray-400 focus:outline-none focus:ring focus:ring-blue-500"
-        />
-        <button class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg w-full sm:w-auto">
-          Add New Ad
-        </button>
+
+  <!-- Sidebar -->
+  <admin-side-bar></admin-side-bar>
+
+  <!-- Main Content -->
+  <main class="w-full p-4 sm:p-6 mt-6">
+    <h1 class="text-2xl sm:text-3xl font-bold text-blue-400 mb-6">📢 Manage All Ads</h1>
+
+    <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mb-6">
+      <input
+        type="text"
+        [(ngModel)]="searchQuery"
+        (input)="filterAds()"
+        placeholder="Search ads by title or user..."
+        class="px-4 py-2 w-full sm:w-1/2 rounded-lg bg-gray-700 text-white border border-gray-600 placeholder-gray-400 focus:outline-none focus:ring focus:ring-blue-500"
+      />
+      <button (click)="openAddAdForm()" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg w-full sm:w-auto">
+        Add New Ad
+      </button>
+    </div>
+
+    <div class="bg-gray-800 p-4 rounded-xl border border-gray-700">
+      <h2 class="text-lg sm:text-xl font-semibold text-blue-300 mb-4">Posted Ads</h2>
+      <div class="overflow-x-auto">
+        <table class="min-w-full text-sm text-left">
+          <thead class="bg-gray-700 text-blue-400">
+            <tr>
+              <th class="p-3">#</th>
+              <th class="p-3">Title</th>
+              <th class="p-3">Location</th>
+              <th class="p-3"></th>
+              <th class="p-3">Status</th>
+              <th class="p-3">Price</th>
+              <th class="p-3">Posted Date</th>
+              <th class="p-3  text-center">Permission</th>
+              <th class="p-3 text-right">Action</th>
+            </tr>
+          </thead>
+          <tbody class="text-gray-300">
+            <tr *ngFor="let ad of filteredAds; let i = index" class="border-b border-gray-700 hover:bg-gray-700">
+              <td class="p-3">{{ i + 1 }}</td>
+              <td class="p-3">{{ ad.title }}</td>
+              <td class="p-3">{{ ad.location }}</td>
+              <td class="p-3"></td>
+              <td class="p-3">
+                <span
+                  class="px-2 py-1 text-xs rounded"
+                  [ngClass]="{
+                    'bg-green-700': ad.status === 'Active',
+                    'bg-yellow-600': ad.status === 'Pending',
+                    'bg-red-700': ad.status === 'Rejected'
+                  }"
+                >
+                  {{ ad.status }}
+                </span>
+              </td>
+              <td class="p-3">LKR {{ ad.price | number }}</td>
+              <td class="p-3">{{ ad.createdAt | date: 'yyyy-MM-dd' }}</td>
+              <td class="p-3 text-right">
+                <button *ngIf="ad.status === 'Pending'" (click)="approveAd(ad.id)" class="text-green-400 hover:underline mr-3">Approve</button>
+                <button *ngIf="ad.status === 'Pending'" (click)="rejectAd(ad.id)" class="text-red-500 hover:underline mr-3">Reject</button>
+              </td>
+              <td class="p-3 text-right">
+                <button (click)="deleteAd(ad.id)" class="text-red-500 hover:underline">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-  
-      <div class="bg-gray-800 p-4 rounded-xl border border-gray-700">
-        <h2 class="text-lg sm:text-xl font-semibold text-blue-300 mb-4">Posted Ads</h2>
-        <div class="overflow-x-auto">
-          <table class="min-w-full text-sm text-left">
-            <thead class="bg-gray-700 text-blue-400">
-              <tr>
-                <th class="p-3">#</th>
-                <th class="p-3">Title</th>
-                <th class="p-3">Posted By</th>
-                <th class="p-3">Status</th>
-                <th class="p-3">Price</th>
-                <th class="p-3">Posted Date</th>
-                <th class="p-3 text-right">Actions</th>
-              </tr>
-            </thead>
-            <tbody class="text-gray-300">
-              <tr class="border-b border-gray-700 hover:bg-gray-700">
-                <td class="p-3">1</td>
-                <td class="p-3">Toyota Premio 2015</td>
-                <td class="p-3">user123</td>
-                <td class="p-3">
-                  <span class="px-2 py-1 text-xs rounded bg-green-700">Active</span>
-                </td>
-                <td class="p-3">LKR 5,600,000</td>
-                <td class="p-3">2025-04-21</td>
-                <td class="p-3 text-right">
-                  <button class="text-yellow-400 hover:underline mr-3">Edit</button>
-                  <button class="text-red-500 hover:underline">Delete</button>
-                </td>
-              </tr>
-              <tr class="border-b border-gray-700 hover:bg-gray-700">
-                <td class="p-3">2</td>
-                <td class="p-3">Suzuki Wagon R 2018</td>
-                <td class="p-3">user456</td>
-                <td class="p-3">
-                  <span class="px-2 py-1 text-xs rounded bg-yellow-600">Pending</span>
-                </td>
-                <td class="p-3">LKR 3,200,000</td>
-                <td class="p-3">2025-04-20</td>
-                <td class="p-3 text-right">
-                  <button class="text-green-400 hover:underline mr-3">Approve</button>
-                  <button class="text-red-500 hover:underline">Reject</button>
-                </td>
-              </tr>
-     
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </main>
-  </div>
-  
-  <app-footer></app-footer>
+    </div>
+  </main>
+</div>
+
+<app-footer></app-footer>

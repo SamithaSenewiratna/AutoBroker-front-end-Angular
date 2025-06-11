@@ -60,3 +60,31 @@
     </form>
   </div>
 </section>
+
+<!-- ✅ Compact Bottom-Right Corner Alert -->
+<div
+  *ngIf="showSuccess"
+  class="fixed bottom-4 right-4 z-50 animate-slide-up"
+>
+  <div
+    class="bg-green-600 text-white px-4 py-2 rounded-md shadow-md flex items-center space-x-3 text-sm"
+  >
+    <svg
+      class="w-4 h-4 text-white"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+    >
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+    </svg>
+    <span>Account created Successfully!</span>
+    <button
+      (click)="showSuccess = false"
+      class="ml-2 text-white hover:text-gray-200 text-sm leading-none"
+    >
+      ✕
+    </button>
+  </div>
+</div>
+

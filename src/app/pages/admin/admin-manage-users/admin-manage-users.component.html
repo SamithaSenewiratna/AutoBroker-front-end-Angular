@@ -14,7 +14,7 @@
           placeholder="Search users..."
           class="px-4 py-2 w-full sm:w-1/2 rounded-lg bg-gray-700 text-white border border-gray-600 placeholder-gray-400 focus:outline-none focus:ring focus:ring-blue-500"
         />
-        <button class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg w-full sm:w-auto">
+        <button (click)="addUser()" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg w-full sm:w-auto">
           Add New User
         </button>
       </div>
@@ -31,38 +31,34 @@
                 <th class="p-3">Email</th>
                 <th class="p-3">Role</th>
                 <th class="p-3">Status</th>
-                <th class="p-3 text-right">Actions</th>
+                <th class="p-3 text-right pr-18">Actions</th>
               </tr>
             </thead>
-            <tbody class="text-gray-300">
-              <tr class="border-b border-gray-700 hover:bg-gray-700">
-                <td class="p-3">1</td>
-                <td class="p-3">John Doe</td>
-                <td class="p-3">johnexample.com</td>
-                <td class="p-3">User</td>
-                <td class="p-3">
-                  <span class="px-2 py-1 text-xs rounded bg-green-700">Active</span>
-                </td>
-                <td class="p-3 text-right">
-                  <button class="text-yellow-400 hover:underline mr-3">Edit</button>
-                  <button class="text-red-500 hover:underline">Delete</button>
-                </td>
-              </tr>
-              <tr class="border-b border-gray-700 hover:bg-gray-700">
-                <td class="p-3">2</td>
-                <td class="p-3">Jane Smith</td>
-                <td class="p-3">janeexample.com</td>
-                <td class="p-3">Admin</td>
-                <td class="p-3">
-                  <span class="px-2 py-1 text-xs rounded bg-red-700">Suspended</span>
-                </td>
-                <td class="p-3 text-right">
-                  <button class="text-yellow-400 hover:underline mr-3">Edit</button>
-                  <button class="text-red-500 hover:underline">Delete</button>
-                </td>
-              </tr>
-        
-            </tbody>
+           <tbody class="text-gray-300">
+                  <tr *ngFor="let user of Users; let i = index" class="border-b border-gray-700 hover:bg-gray-700">
+                    <td class="p-3">{{ i + 1 }}</td>
+                    <td class="p-3">{{ user.name }}</td>
+                    <td class="p-3">{{ user.email }}</td>
+                    <td class="p-3">{{ user.role }}</td>
+                    <td class="p-3">
+                      <span
+                        class="px-2 py-1 text-xs rounded"
+                        [ngClass]="{
+                          'bg-green-700': user.status === 'Active',
+                          'bg-red-700': user.status === 'Suspended'
+                        }"
+                      >
+                        {{ user.status || 'Active' }}
+                      </span>
+                    </td>
+                    <td class="p-3 text-right">
+                      <button class="text-yellow-400 hover:underline mr-3" >Edit</button>
+                      <button class="text-red-500 hover:underline mr-3" (click)="deleteUser(user.id)">Delete</button>
+                     <button class="text-red-100 hover:underline mr-6">Update</button>
+                    
+                    </td>
+                  </tr>
+                </tbody>
           </table>
         </div>
       </div>

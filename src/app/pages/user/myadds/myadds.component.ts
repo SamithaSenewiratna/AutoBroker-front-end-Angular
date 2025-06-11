@@ -90,6 +90,7 @@ async saveChanges() {
       )
     );
     console.log('Ad updated!', response);
+    alert('Ad updated successfully!');
 
     const index = this.advertisements.findIndex(p => p.id === this.selectedProduct.id);
     if (index !== -1) {
@@ -106,21 +107,31 @@ update() {
   this.saveChanges();
 }
 
-delete(adId: number) {
+delete(adId: number): void {
   this.http.delete(`${this.baseUrl}/delete/${adId}`).subscribe({
-    next: (response) => {
-    
-      const index = this.advertisements.findIndex(p => p.id === adId);
-      if (index !== -1) {
-        this.advertisements.splice(index, 1);
-      }
-    },
-    error: (error) => {
-      console.error('Failed to delete advertisement:', error);
-    }
+    next: () => this.onDeleteSuccess(adId),
+    error: (error) => this.onDeleteError(error)
   });
 }
 
+private onDeleteSuccess(adId: number): void {
+
+  this.showCustomAlert('✅ Ad deleted successfully!', 'success');
+  const index = this.advertisements.findIndex(ad => ad.id === adId);
+  if (index !== -1) {
+    this.advertisements.splice(index, 1);
+  }
+}
+
+private onDeleteError(error: any): void {
+  console.error('Failed to delete advertisement:', error);
+  this.showCustomAlert('❌ Failed to delete ad. Please try again.', 'error');
+}
+
+showCustomAlert(message: string, type: 'success' | 'error'): void {
+  alert(message); 
+}
+  
 
 onFileSelected(event: Event) {
   const input = event.target as HTMLInputElement;

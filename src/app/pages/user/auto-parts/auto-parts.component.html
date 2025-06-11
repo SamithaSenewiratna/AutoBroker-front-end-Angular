@@ -35,11 +35,11 @@
         </a>
     </li>
     <li>
-      <a href="#" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+      <a (click)="toggleLogoutModal()" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
         <svg class="ml-1.5 w-5 h-5 text-gray-400 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16">
           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h11m0 0-4-4m4 4-4 4m-5 3H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h3"/>
       </svg>
-          <span class="ml-3">Log Out</span>
+          <span  class="ml-3">Log Out</span>
       </a>
   </li>
 
@@ -251,6 +251,35 @@
 
   </div>
 </div>
+
+
+  <div id="logoutModal"
+     class="fixed inset-0 z-50 hidden items-center justify-center bg-transparent bg-opacity-40 backdrop-blur-sm backdrop-brightness-75">
+
+    <div class="bg-gray-900 border border-gray-700 text-white rounded-xl p-6 w-full max-w-md mx-auto relative shadow-xl">
+      
+
+      <button (click)="toggleLogoutModal()" class="absolute top-3 right-3 text-gray-400 hover:text-white text-lg">✖</button>
+      
+    
+      <div class="text-center">
+        <div class="text-4xl mb-2 text-red-500">⚠️</div>
+        <h2 class="text-2xl font-bold text-red-400 mb-2">Confirm Logout</h2>
+        <p class="text-gray-400 mb-6">Are you sure you want to logout from your account?</p>
+      </div>
+  
+    
+      <div class="flex justify-center gap-4">
+        <button (click)="toggleLogoutModal()" class="px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg text-white">
+          Cancel
+        </button>
+        <button (click)="confirmLogout()" class="px-4 py-2 bg-red-600 hover:bg-red-700 rounded-lg text-white">
+          Yes, Logout
+        </button>
+      </div>
+    </div>
+  </div>
+  
 
 <!-- Mobile Sidebar (visible on smaller screens) -->
 <div id="mobileSidebar" class="fixed inset-0 z-50 bg-gray-800 bg-opacity-75 hidden md:hidden">
