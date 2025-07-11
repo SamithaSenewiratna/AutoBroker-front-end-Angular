@@ -5,7 +5,7 @@ import { AboutUsComponent } from './pages/user/about-us/about-us.component';
 import { MyaddsComponent } from './pages/user/myadds/myadds.component';
 import { AutoPartsComponent } from './pages/user/auto-parts/auto-parts.component';
 import { UserProfileComponent } from './pages/user/user-profile/user-profile.component';
-import { LoginComponent } from './pages/login/login.component';
+import { LoginComponent } from './auth/login/login.component';
 import { CreateAdComponent } from './pages/user/create-ad/create-ad.component';
 import { ChatBotComponent } from './pages/user/chat-bot/chat-bot.component';
 import { AdminDashboardComponent } from './pages/admin/admin-dashboard/admin-dashboard.component';
@@ -14,14 +14,15 @@ import { AdminManageUsersComponent } from './pages/admin/admin-manage-users/admi
 import { AdminManageaddsComponent } from './pages/admin/admin-manageadds/admin-manageadds.component';
 import { AdminManageTopUpRequestComponent } from './pages/admin/admin-manage-top-up-request/admin-manage-top-up-request.component';
 import { AdminProfileComponent } from './pages/admin/admin-profile/admin-profile.component';
-import { SignUpComponent } from './pages/sign-up/sign-up.component';
+import { SignUpComponent } from './auth/sign-up/sign-up.component';
+
 
 export const routes: Routes = [
 
     {
 
         path: "",
-        component: HomepageComponent
+        component: LoginComponent
         
         },
 
